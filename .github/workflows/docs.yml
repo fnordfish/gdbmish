@@ -1,0 +1,23 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches: [main, ghactions]
+permissions: 
+  contents: write
+jobs:
+  build-pages:
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Crystal
+        uses: crystal-lang/install-crystal@v1
+      - name: Build Doccs
+        run: crystal docs
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages
+          folder: docs
