@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 1.3.2">
+<meta name="crystal_docs.project_version" content="ghactions">
+<meta name="crystal_docs.project_name" content="gdbmish">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="gdbmish">
+  <title>Gdbmish::Dump - gdbmish ghactions</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          gdbmish
+        </a>
+      </h1>
+
+      <span class="project-version">
+        ghactions
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="gdbmish/Gdbmish" data-name="gdbmish">
+      <a href="../Gdbmish.html">Gdbmish</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="gdbmish/Gdbmish/Dump" data-name="gdbmish::dump">
+      <a href="../Gdbmish/Dump.html">Dump</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> Gdbmish::Dump
+
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/fnordfish/gdbmish/blob/a7ff74667173a1060b3bfba33fb2e0e71a4bd8cd/src/gdbmish/dump.cr#L4" target="_blank">
+        gdbmish/dump.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="GDBM_MAX_DUMP_LINE_LEN">
+        <strong>GDBM_MAX_DUMP_LINE_LEN</strong> = <code><span class="n">76</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>GDBMs does not split base64 strings at 60 encoded characters (as defined by RFC 2045).
+See <a href="https://git.gnu.org.ua/gdbm.git/tree/src/gdbmdefs.h">gdbmdefs.h</a></p>
+      </dd>
+      
+    
+  </dl>
+
+
+
+
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#ascii%28data%3AHash%7CNamedTuple%2Cio%3AIO%2Cfile%3AString%3F%3Dnil%2Cuid%3AString%3F%3Dnil%2Cuser%3AString%3F%3Dnil%2Cgid%3AString%3F%3Dnil%2Cgroup%3AString%3F%3Dnil%2Cmode%3AInt32%3F%3Dnil%29-class-method" class="signature"><strong>.ascii</strong>(data : Hash | NamedTuple, io : IO, file : String? = <span class="n">nil</span>, uid : String? = <span class="n">nil</span>, user : String? = <span class="n">nil</span>, gid : String? = <span class="n">nil</span>, group : String? = <span class="n">nil</span>, mode : Int32? = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Dump the given data in standard ASCII format into a provided <code>IO</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ascii%28data%3AHash%7CNamedTuple%2C%2A%2Aoptions%29%3AString-class-method" class="signature"><strong>.ascii</strong>(data : Hash | NamedTuple, **options) : String</a>
+        
+          <div class="summary"><p>Like <code><a href="../Gdbmish/Dump.html#ascii%28data%3AHash%7CNamedTuple%2Cio%3AIO%2Cfile%3AString%3F%3Dnil%2Cuid%3AString%3F%3Dnil%2Cuser%3AString%3F%3Dnil%2Cgid%3AString%3F%3Dnil%2Cgroup%3AString%3F%3Dnil%2Cmode%3AInt32%3F%3Dnil%29-class-method">.ascii</a></code> but builds a new <code>String</code></p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="ascii(data:Hash|NamedTuple,io:IO,file:String?=nil,uid:String?=nil,user:String?=nil,gid:String?=nil,group:String?=nil,mode:Int32?=nil)-class-method">
+      <div class="signature">
+        
+        def self.<strong>ascii</strong>(data : Hash | NamedTuple, io : IO, file : String? = <span class="n">nil</span>, uid : String? = <span class="n">nil</span>, user : String? = <span class="n">nil</span>, gid : String? = <span class="n">nil</span>, group : String? = <span class="n">nil</span>, mode : Int32? = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#ascii%28data%3AHash%7CNamedTuple%2Cio%3AIO%2Cfile%3AString%3F%3Dnil%2Cuid%3AString%3F%3Dnil%2Cuser%3AString%3F%3Dnil%2Cgid%3AString%3F%3Dnil%2Cgroup%3AString%3F%3Dnil%2Cmode%3AInt32%3F%3Dnil%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Dump the given data in standard ASCII format into a provided <code>IO</code>.</p>
+<p>Dumping file information is optional.</p>
+<ul>
+<li><em>uid</em>, <em>user</em>, <em>gid</em>, <em>group</em> and <em>mode</em> will only be used when <em>file</em> is given</li>
+<li><em>user</em> will only be used when <em>uid</em> is given</li>
+<li><em>group</em> will only be used when <em>gid</em> is given</li>
+</ul>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/fnordfish/gdbmish/blob/a7ff74667173a1060b3bfba33fb2e0e71a4bd8cd/src/gdbmish/dump.cr#L15" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ascii(data:Hash|NamedTuple,**options):String-class-method">
+      <div class="signature">
+        
+        def self.<strong>ascii</strong>(data : Hash | NamedTuple, **options) : String
+
+        <a class="method-permalink" href="#ascii%28data%3AHash%7CNamedTuple%2C%2A%2Aoptions%29%3AString-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Like <code><a href="../Gdbmish/Dump.html#ascii%28data%3AHash%7CNamedTuple%2Cio%3AIO%2Cfile%3AString%3F%3Dnil%2Cuid%3AString%3F%3Dnil%2Cuser%3AString%3F%3Dnil%2Cgid%3AString%3F%3Dnil%2Cgroup%3AString%3F%3Dnil%2Cmode%3AInt32%3F%3Dnil%29-class-method">.ascii</a></code> but builds a new <code>String</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/fnordfish/gdbmish/blob/a7ff74667173a1060b3bfba33fb2e0e71a4bd8cd/src/gdbmish/dump.cr#L63" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

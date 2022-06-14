@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 1.3.2">
+<meta name="crystal_docs.project_version" content="ghactions">
+<meta name="crystal_docs.project_name" content="gdbmish">
+
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+  <meta name="repository-name" content="gdbmish">
+  <title>gdbmish ghactions</title>
+  <script type="text/javascript">
+  CrystalDocs.base_path = "";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="index.html">
+          gdbmish
+        </a>
+      </h1>
+
+      <span class="project-version">
+        ghactions
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent " data-id="gdbmish/Gdbmish" data-name="gdbmish">
+      <a href="Gdbmish.html">Gdbmish</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gdbmish/Gdbmish/Dump" data-name="gdbmish::dump">
+      <a href="Gdbmish/Dump.html">Dump</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1><a id="gdb-mish" class="anchor" href="#gdb-mish">  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>GDBMish</h1>
+<p>Convert crystal data structures into a <code>gdpm_dump</code> ASCII format.</p>
+<p>Citing <a href="https://git.gnu.org.ua/gdbm.git/tree/NOTE-WARNING">gdbm</a>:</p>
+<blockquote>
+<p>Gdbm files have never been `portable' between different operating systems,
+system architectures, or potentially even different compilers.  Differences
+in byte order, the size of file offsets, and even structure packing make
+gdbm files non-portable.</p>
+<p>Therefore, if you intend to send your database to somebody over the wire,
+please dump it into a portable format using gdbm_dump and send the resulting
+file instead. The receiving party will be able to recreate the database from
+the dump using the gdbm_load command.</p>
+</blockquote>
+<p>GDBMish does that by reimplementing the <code>gdpm_dump</code> ASCII format without compiling against <code>gdbm</code></p>
+<h2><a id="installation" class="anchor" href="#installation">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Installation</h2>
+<ol>
+<li>
+<p>Add the dependency to your <code>shard.yml</code>:</p>
+<pre><code class="language-yaml">dependencies:
+  gdbmish:
+    github: fnordfish/gdbmish</code></pre>
+</li>
+<li>
+<p>Run <code>shards install</code></p>
+</li>
+</ol>
+<h2><a id="usage" class="anchor" href="#usage">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Usage</h2>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;gdbmish&quot;</span></code></pre>
+<pre><code class="language-crystal"><span class="c"># Get dump as String</span>
+string <span class="o">=</span> <span class="t">Gdbmish</span><span class="t">::</span><span class="t">Dump</span>.ascii({<span class="s">&quot;key1&quot;</span> =&gt; <span class="s">&quot;value&quot;</span>, <span class="s">&quot;key2&quot;</span> =&gt; value})
+
+<span class="c"># Write directly into File (or any other IO)</span>
+<span class="t">File</span>.open(<span class="s">&quot;my_db.dump&quot;</span>, <span class="s">&quot;w&quot;</span>) <span class="k">do</span> <span class="o">|</span>file<span class="o">|</span>
+  <span class="t">Gdbmish</span><span class="t">::</span><span class="t">Dump</span>.ascii({<span class="s">&quot;key1&quot;</span> =&gt; <span class="s">&quot;value&quot;</span>, <span class="s">&quot;key2&quot;</span> =&gt; value}, file)
+<span class="k">end</span>
+
+<span class="c"># Provide an original filename</span>
+<span class="t">Gdbmish</span><span class="t">::</span><span class="t">Dump</span>.ascii(data, file: <span class="s">&quot;my.db&quot;</span>)
+
+<span class="c"># Provide an original filename and file permissions</span>
+<span class="t">Gdbmish</span><span class="t">::</span><span class="t">Dump</span>.ascii(data, file: <span class="s">&quot;my.db&quot;</span>, uid: <span class="s">&quot;1000&quot;</span>, gid: <span class="s">&quot;1000&quot;</span>, mode: <span class="n">0o600</span>)</code></pre>
+<h2><a id="development" class="anchor" href="#development">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Development</h2>
+<p><span class="flag orange">TODO</span>  Write development instructions here</p>
+<h2><a id="limitations" class="anchor" href="#limitations">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Limitations</h2>
+<ul>
+<li>Currently only supports the ASCII format and not the Binary format</li>
+<li>Currently requires a <code>Hash</code> or <code>NamedTuple</code> with <code>String</code> keys and values
+<ul>
+<li>it would be nice to provide a &quot;consumer&quot; style API for dumping larger data sets</li>
+</ul>
+</li>
+<li>Currently only supports creating a dump
+<ul>
+<li>it would be nice to also read dumps</li>
+</ul>
+</li>
+</ul>
+<h2><a id="contributing" class="anchor" href="#contributing">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributing</h2>
+<ol>
+<li>Fork it (<a href="https://github.com/fnordfish/gdbmish/fork">https://github.com/fnordfish/gdbmish/fork</a>)</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create a new Pull Request</li>
+</ol>
+<h2><a id="contributors" class="anchor" href="#contributors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributors</h2>
+<ul>
+<li><a href="https://github.com/fnordfish">Robert Schulze</a> - creator and maintainer</li>
+</ul>
+</div>
+</body>
+</html>
