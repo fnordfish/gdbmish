@@ -15,6 +15,9 @@ Citing [gdbm](https://git.gnu.org.ua/gdbm.git/tree/NOTE-WARNING):
 
 GDBMish does that by reimplementing the `gdpm_dump` ASCII format without compiling against `gdbm`
 
+[![GitHub release](https://img.shields.io/github/release/fnordfish/gdbmish.svg)](https://github.com/fnordfish/gdbmish/releases)
+[![Docs](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://fnordfish.github.io/gdbmish/)
+
 ## Installation
 
 1. Add the dependency to your `shard.yml`:
