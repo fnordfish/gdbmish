@@ -1,0 +1,36 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  release:
+
+permissions: 
+  contents: write
+
+jobs:
+  build-pages:
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Crystal
+        uses: crystal-lang/install-crystal@v1
+      - name: Build Doccs
+        run: crystal docs
+      - name: Deploy HEAD docs
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
+          branch: gh-pages
+          folder: docs
+      - name: Deploy tag docs
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+        with:
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
+          branch: gh-pages
+          folder: docs
+          target_folder: ${{ github.ref_name }}
