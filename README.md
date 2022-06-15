@@ -50,6 +50,16 @@ Gdbmish::Dump.ascii(data, file: "my.db")
 
 # Provide an original filename and file permissions
 Gdbmish::Dump.ascii(data, file: "my.db", uid: "1000", gid: "1000", mode: 0o600)
+
+# Iterate over a data source and push onto an IO
+fileoptions = {file: "my.db", uid: "1000", user: "ziggy", gid: "1000", group: "staff", mode: 0o600}
+File.open("my.dump", "w") do |file|
+  Gdbmish::Dump::Ascii.new(**fileoptions).dump(io) do |appender|
+    MyDataSource.each do |key, value|
+      appender << {key.to_s, value.to_s}
+    end
+  end
+end
 ```
 
 ## Development
@@ -59,8 +69,6 @@ TODO: Write development instructions here
 ## Limitations
 
 * Currently only supports the ASCII format and not the Binary format
-* Currently requires a `Hash` or `NamedTuple` with `String` keys and values
-  + it would be nice to provide a "consumer" style API for dumping larger data sets
 * Currently only supports creating a dump
   + it would be nice to also read dumps 
 

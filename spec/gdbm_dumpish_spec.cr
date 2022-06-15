@@ -1,14 +1,11 @@
 require "./spec_helper"
 
-data = {
-  föö:  "bää\n🤦‍♂️",
-  foo2: "bar2",
-  foo:  ("bar-"*128),
-}
-dumped_without_header = File.read("spec/fixtures/test.dump").split("# End of header\n")[1]
-
 describe Gdbmish do
-  describe Gdbmish::Dump do
+  it { Gdbmish::VERSION.should_not be nil }
+end
+
+describe Gdbmish::Dump do
+  describe ".ascii" do
     it "Dumps NamedTuple" do
       Gdbmish::Dump.ascii(data).should end_with(dumped_without_header)
     end
@@ -48,10 +45,46 @@ describe Gdbmish do
     end
 
     it "keeps lines at GDBM_MAX_DUMP_LINE_LEN" do
-      data.values.any? { |v| v.size > Gdbmish::Dump::GDBM_MAX_DUMP_LINE_LEN }.should be_true
+      data.values.any? { |v| v.size > Gdbmish::Dump::Ascii::GDBM_MAX_DUMP_LINE_LEN }.should be_true
       Gdbmish::Dump.ascii(data).split("# End of header\n")[1].each_line do |line|
-        line.size.should be <= Gdbmish::Dump::GDBM_MAX_DUMP_LINE_LEN
+        line.size.should be <= Gdbmish::Dump::Ascii::GDBM_MAX_DUMP_LINE_LEN
       end
     end
+
+    it "run using generator/consumer api" do
+      str = Gdbmish::Dump.ascii do |dump|
+        data.each do |k, v|
+          dump << {k.to_s, v.to_s}
+        end
+      end
+
+      str.should end_with(dumped_without_header)
+    end
+  end
+end
+
+describe Gdbmish::Dump::Ascii do
+  fileoptions = {file: "test.db", uid: "1000", user: "ziggy", gid: "1000", group: "staff", mode: 0o600}
+
+  it "#dump with block" do
+    io = IO::Memory.new
+    Gdbmish::Dump::Ascii.new(**fileoptions).dump(io) do |dump|
+      data.each do |key, value|
+        dump << {key.to_s, value.to_s}
+      end
+    end
+    str = io.to_s
+    str.should contain("#:file=test.db")
+    str.should contain("#:uid=1000,user=ziggy,gid=1000,group=staff,mode=600")
+    str.should end_with(dumped_without_header)
+  end
+
+  it "#dump with data" do
+    io = IO::Memory.new
+    Gdbmish::Dump::Ascii.new(**fileoptions).dump(io, data)
+    str = io.to_s
+    str.should contain("#:file=test.db")
+    str.should contain("#:uid=1000,user=ziggy,gid=1000,group=staff,mode=600")
+    str.should end_with(dumped_without_header)
   end
 end
