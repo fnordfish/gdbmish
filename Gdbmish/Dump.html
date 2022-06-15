@@ -56,8 +56,28 @@
       
         <ul>
   
-  <li class=" current" data-id="gdbmish/Gdbmish/Dump" data-name="gdbmish::dump">
+  <li class="parent open current" data-id="gdbmish/Gdbmish/Dump" data-name="gdbmish::dump">
       <a href="../Gdbmish/Dump.html">Dump</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="gdbmish/Gdbmish/Dump/Ascii" data-name="gdbmish::dump::ascii">
+      <a href="../Gdbmish/Dump/Ascii.html">Ascii</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gdbmish/Gdbmish/Dump/Ascii/Appender" data-name="gdbmish::dump::ascii::appender">
+      <a href="../Gdbmish/Dump/Ascii/Appender.html">Appender</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
       
     </li>
   
@@ -83,6 +103,20 @@
 
 
 
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Wrapper for different dump formats, providing various shortcut methods.
+Currently, there is only <code><a href="../Gdbmish/Dump/Ascii.html">Ascii</a></code> mode.</p>
+<p>Ascii mode optionally dumps file information such as filename, owner, mode.
+See <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid%3AString%3F%3Dnil%2Cuser%3AString%3F%3Dnil%2Cgid%3AString%3F%3Dnil%2Cgroup%3AString%3F%3Dnil%2Cmode%3AInt32%3F%3Dnil%29-class-method">Dump::Ascii.new</a></code> on how they are used.</p>
+
 
 
 
@@ -106,7 +140,7 @@
   </h2>
   
     
-      <a href="https://github.com/fnordfish/gdbmish/blob/8503a824ec1fb0b7bcc3c0bf6f0e8c210d907d4e/src/gdbmish/dump.cr#L4" target="_blank">
+      <a href="https://github.com/fnordfish/gdbmish/blob/ee34331e46e7803a94b7d559258354c9231a1543/src/gdbmish/dump.cr#L9" target="_blank">
         gdbmish/dump.cr
       </a>
     
@@ -114,30 +148,6 @@
   
 
 
-
-  
-    <h2>
-      <a id="constant-summary" class="anchor" href="#constant-summary">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-      Constant Summary
-    </h2>
-  
-  <dl>
-    
-      <dt class="entry-const" id="GDBM_MAX_DUMP_LINE_LEN">
-        <strong>GDBM_MAX_DUMP_LINE_LEN</strong> = <code><span class="n">76</span></code>
-      </dt>
-      
-      <dd class="entry-const-doc">
-        <p>GDBMs does not split base64 strings at 60 encoded characters (as defined by RFC 2045).
-See <a href="https://git.gnu.org.ua/gdbm.git/tree/src/gdbmdefs.h">gdbmdefs.h</a></p>
-      </dd>
-      
-    
-  </dl>
 
 
 
@@ -154,16 +164,30 @@ See <a href="https://git.gnu.org.ua/gdbm.git/tree/src/gdbmdefs.h">gdbmdefs.h</a>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#ascii%28data%3AHash%7CNamedTuple%2Cio%3AIO%2Cfile%3AString%3F%3Dnil%2Cuid%3AString%3F%3Dnil%2Cuser%3AString%3F%3Dnil%2Cgid%3AString%3F%3Dnil%2Cgroup%3AString%3F%3Dnil%2Cmode%3AInt32%3F%3Dnil%29-class-method" class="signature"><strong>.ascii</strong>(data : Hash | NamedTuple, io : IO, file : String? = <span class="n">nil</span>, uid : String? = <span class="n">nil</span>, user : String? = <span class="n">nil</span>, gid : String? = <span class="n">nil</span>, group : String? = <span class="n">nil</span>, mode : Int32? = <span class="n">nil</span>)</a>
+        <a href="#ascii%28data%3AHash%7CNamedTuple%2Cio%3AIO%2C%2A%2Afileoptions%29%3AIO-class-method" class="signature"><strong>.ascii</strong>(data : Hash | NamedTuple, io : IO, **fileoptions) : IO</a>
         
-          <div class="summary"><p>Dump the given data in standard ASCII format into a provided <code>IO</code>.</p></div>
+          <div class="summary"><p>Dump <em>data</em> as standard ASCII format into <em>io</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#ascii%28data%3AHash%7CNamedTuple%2C%2A%2Aoptions%29%3AString-class-method" class="signature"><strong>.ascii</strong>(data : Hash | NamedTuple, **options) : String</a>
+        <a href="#ascii%28data%3AHash%7CNamedTuple%2C%2A%2Afileoptions%29%3AString-class-method" class="signature"><strong>.ascii</strong>(data : Hash | NamedTuple, **fileoptions) : String</a>
         
-          <div class="summary"><p>Like <code><a href="../Gdbmish/Dump.html#ascii%28data%3AHash%7CNamedTuple%2Cio%3AIO%2Cfile%3AString%3F%3Dnil%2Cuid%3AString%3F%3Dnil%2Cuser%3AString%3F%3Dnil%2Cgid%3AString%3F%3Dnil%2Cgroup%3AString%3F%3Dnil%2Cmode%3AInt32%3F%3Dnil%29-class-method">.ascii</a></code> but builds a new <code>String</code></p></div>
+          <div class="summary"><p>Dump <em>data</em> as standard ASCII format into a new <code>String</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ascii%28io%3AIO%2C%2A%2Afileoptions%2C%26block%3AAscii%3A%3AAppender-%3E_%29%3AString-class-method" class="signature"><strong>.ascii</strong>(io : IO, **fileoptions, &block : Ascii::Appender -> _) : String</a>
+        
+          <div class="summary"><p>Yields a <code><a href="../Gdbmish/Dump/Ascii/Appender.html">Ascii::Appender</a></code> which consumes key-value <code>Tuple</code>s.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ascii%28%2A%2Afileoptions%2C%26block%3AAscii%3A%3AAppender-%3E_%29%3AString-class-method" class="signature"><strong>.ascii</strong>(**fileoptions, &block : Ascii::Appender -> _) : String</a>
+        
+          <div class="summary"><p>Yields a <code><a href="../Gdbmish/Dump/Ascii/Appender.html">Ascii::Appender</a></code> which consumes key-value <code>Tuple</code>s.</p></div>
         
       </li>
     
@@ -191,50 +215,108 @@ See <a href="https://git.gnu.org.ua/gdbm.git/tree/src/gdbmdefs.h">gdbmdefs.h</a>
     Class Method Detail
   </h2>
   
-    <div class="entry-detail" id="ascii(data:Hash|NamedTuple,io:IO,file:String?=nil,uid:String?=nil,user:String?=nil,gid:String?=nil,group:String?=nil,mode:Int32?=nil)-class-method">
+    <div class="entry-detail" id="ascii(data:Hash|NamedTuple,io:IO,**fileoptions):IO-class-method">
       <div class="signature">
         
-        def self.<strong>ascii</strong>(data : Hash | NamedTuple, io : IO, file : String? = <span class="n">nil</span>, uid : String? = <span class="n">nil</span>, user : String? = <span class="n">nil</span>, gid : String? = <span class="n">nil</span>, group : String? = <span class="n">nil</span>, mode : Int32? = <span class="n">nil</span>)
+        def self.<strong>ascii</strong>(data : Hash | NamedTuple, io : IO, **fileoptions) : IO
 
-        <a class="method-permalink" href="#ascii%28data%3AHash%7CNamedTuple%2Cio%3AIO%2Cfile%3AString%3F%3Dnil%2Cuid%3AString%3F%3Dnil%2Cuser%3AString%3F%3Dnil%2Cgid%3AString%3F%3Dnil%2Cgroup%3AString%3F%3Dnil%2Cmode%3AInt32%3F%3Dnil%29-class-method">#</a>
+        <a class="method-permalink" href="#ascii%28data%3AHash%7CNamedTuple%2Cio%3AIO%2C%2A%2Afileoptions%29%3AIO-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Dump the given data in standard ASCII format into a provided <code>IO</code>.</p>
-<p>Dumping file information is optional.</p>
-<ul>
-<li><em>uid</em>, <em>user</em>, <em>gid</em>, <em>group</em> and <em>mode</em> will only be used when <em>file</em> is given</li>
-<li><em>user</em> will only be used when <em>uid</em> is given</li>
-<li><em>group</em> will only be used when <em>gid</em> is given</li>
-</ul>
+          <p>Dump <em>data</em> as standard ASCII format into <em>io</em>.</p>
+<p>For <em>fileoptions</em> see <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid%3AString%3F%3Dnil%2Cuser%3AString%3F%3Dnil%2Cgid%3AString%3F%3Dnil%2Cgroup%3AString%3F%3Dnil%2Cmode%3AInt32%3F%3Dnil%29-class-method">Dump::Ascii.new</a></code></p>
+<p>Example:</p>
+<pre><code class="language-crystal"><span class="t">Gdbmish</span><span class="t">::</span><span class="t">Dump</span>.ascii({some: <span class="s">&quot;data&quot;</span>}, io)</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/8503a824ec1fb0b7bcc3c0bf6f0e8c210d907d4e/src/gdbmish/dump.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/ee34331e46e7803a94b7d559258354c9231a1543/src/gdbmish/dump.cr#L147" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="ascii(data:Hash|NamedTuple,**options):String-class-method">
+    <div class="entry-detail" id="ascii(data:Hash|NamedTuple,**fileoptions):String-class-method">
       <div class="signature">
         
-        def self.<strong>ascii</strong>(data : Hash | NamedTuple, **options) : String
+        def self.<strong>ascii</strong>(data : Hash | NamedTuple, **fileoptions) : String
 
-        <a class="method-permalink" href="#ascii%28data%3AHash%7CNamedTuple%2C%2A%2Aoptions%29%3AString-class-method">#</a>
+        <a class="method-permalink" href="#ascii%28data%3AHash%7CNamedTuple%2C%2A%2Afileoptions%29%3AString-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Like <code><a href="../Gdbmish/Dump.html#ascii%28data%3AHash%7CNamedTuple%2Cio%3AIO%2Cfile%3AString%3F%3Dnil%2Cuid%3AString%3F%3Dnil%2Cuser%3AString%3F%3Dnil%2Cgid%3AString%3F%3Dnil%2Cgroup%3AString%3F%3Dnil%2Cmode%3AInt32%3F%3Dnil%29-class-method">.ascii</a></code> but builds a new <code>String</code></p>
+          <p>Dump <em>data</em> as standard ASCII format into a new <code>String</code>.</p>
+<p>For <em>fileoptions</em> see <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid%3AString%3F%3Dnil%2Cuser%3AString%3F%3Dnil%2Cgid%3AString%3F%3Dnil%2Cgroup%3AString%3F%3Dnil%2Cmode%3AInt32%3F%3Dnil%29-class-method">Dump::Ascii.new</a></code></p>
+<p>Example:</p>
+<pre><code class="language-crystal">dump <span class="o">=</span> <span class="t">Gdbmish</span><span class="t">::</span><span class="t">Dump</span>.ascii({some: <span class="s">&quot;data&quot;</span>})</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/8503a824ec1fb0b7bcc3c0bf6f0e8c210d907d4e/src/gdbmish/dump.cr#L63" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/ee34331e46e7803a94b7d559258354c9231a1543/src/gdbmish/dump.cr#L159" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ascii(io:IO,**fileoptions,&amp;block:Ascii::Appender-&gt;_):String-class-method">
+      <div class="signature">
+        
+        def self.<strong>ascii</strong>(io : IO, **fileoptions, &block : <a href="../Gdbmish/Dump/Ascii/Appender.html">Ascii::Appender</a> -> _) : String
+
+        <a class="method-permalink" href="#ascii%28io%3AIO%2C%2A%2Afileoptions%2C%26block%3AAscii%3A%3AAppender-%3E_%29%3AString-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Yields a <code><a href="../Gdbmish/Dump/Ascii/Appender.html">Ascii::Appender</a></code> which consumes key-value <code>Tuple</code>s.
+Dumps a standard ASCII format into <em>io</em>.</p>
+<p>For <em>fileoptions</em> see <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid%3AString%3F%3Dnil%2Cuser%3AString%3F%3Dnil%2Cgid%3AString%3F%3Dnil%2Cgroup%3AString%3F%3Dnil%2Cmode%3AInt32%3F%3Dnil%29-class-method">Dump::Ascii.new</a></code></p>
+<p>Example:</p>
+<pre><code class="language-crystal">dump <span class="o">=</span> <span class="t">Gdbmish</span><span class="t">::</span><span class="t">Dump</span>.ascii(io) <span class="k">do</span> <span class="o">|</span>appender<span class="o">|</span>
+  <span class="t">MyDataSource</span>.each <span class="k">do</span> <span class="o">|</span>key, value<span class="o">|</span>
+    appender <span class="o">&lt;&lt;</span> {key.to_s, value.to_s}
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/fnordfish/gdbmish/blob/ee34331e46e7803a94b7d559258354c9231a1543/src/gdbmish/dump.cr#L197" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ascii(**fileoptions,&amp;block:Ascii::Appender-&gt;_):String-class-method">
+      <div class="signature">
+        
+        def self.<strong>ascii</strong>(**fileoptions, &block : <a href="../Gdbmish/Dump/Ascii/Appender.html">Ascii::Appender</a> -> _) : String
+
+        <a class="method-permalink" href="#ascii%28%2A%2Afileoptions%2C%26block%3AAscii%3A%3AAppender-%3E_%29%3AString-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Yields a <code><a href="../Gdbmish/Dump/Ascii/Appender.html">Ascii::Appender</a></code> which consumes key-value <code>Tuple</code>s.
+Returns a standard ASCII format as a new <code>String</code>.</p>
+<p>For <em>fileoptions</em> see <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid%3AString%3F%3Dnil%2Cuser%3AString%3F%3Dnil%2Cgid%3AString%3F%3Dnil%2Cgroup%3AString%3F%3Dnil%2Cmode%3AInt32%3F%3Dnil%29-class-method">Dump::Ascii.new</a></code></p>
+<p>Example:</p>
+<pre><code class="language-crystal">dump <span class="o">=</span> <span class="t">Gdbmish</span><span class="t">::</span><span class="t">Dump</span>.ascii <span class="k">do</span> <span class="o">|</span>appender<span class="o">|</span>
+  <span class="t">MyDataSource</span>.each <span class="k">do</span> <span class="o">|</span>key, value<span class="o">|</span>
+    appender <span class="o">&lt;&lt;</span> {key.to_s, value.to_s}
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/fnordfish/gdbmish/blob/ee34331e46e7803a94b7d559258354c9231a1543/src/gdbmish/dump.cr#L178" target="_blank">View source</a>]
         
       </div>
     </div>

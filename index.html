@@ -56,8 +56,28 @@
       
         <ul>
   
-  <li class=" " data-id="gdbmish/Gdbmish/Dump" data-name="gdbmish::dump">
+  <li class="parent " data-id="gdbmish/Gdbmish/Dump" data-name="gdbmish::dump">
       <a href="Gdbmish/Dump.html">Dump</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="gdbmish/Gdbmish/Dump/Ascii" data-name="gdbmish::dump::ascii">
+      <a href="Gdbmish/Dump/Ascii.html">Ascii</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gdbmish/Gdbmish/Dump/Ascii/Appender" data-name="gdbmish::dump::ascii::appender">
+      <a href="Gdbmish/Dump/Ascii/Appender.html">Appender</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
       
     </li>
   
@@ -126,7 +146,17 @@ string <span class="o">=</span> <span class="t">Gdbmish</span><span class="t">::
 <span class="t">Gdbmish</span><span class="t">::</span><span class="t">Dump</span>.ascii(data, file: <span class="s">&quot;my.db&quot;</span>)
 
 <span class="c"># Provide an original filename and file permissions</span>
-<span class="t">Gdbmish</span><span class="t">::</span><span class="t">Dump</span>.ascii(data, file: <span class="s">&quot;my.db&quot;</span>, uid: <span class="s">&quot;1000&quot;</span>, gid: <span class="s">&quot;1000&quot;</span>, mode: <span class="n">0o600</span>)</code></pre>
+<span class="t">Gdbmish</span><span class="t">::</span><span class="t">Dump</span>.ascii(data, file: <span class="s">&quot;my.db&quot;</span>, uid: <span class="s">&quot;1000&quot;</span>, gid: <span class="s">&quot;1000&quot;</span>, mode: <span class="n">0o600</span>)
+
+<span class="c"># Iterate over a data source and push onto an IO</span>
+fileoptions <span class="o">=</span> {file: <span class="s">&quot;my.db&quot;</span>, uid: <span class="s">&quot;1000&quot;</span>, user: <span class="s">&quot;ziggy&quot;</span>, gid: <span class="s">&quot;1000&quot;</span>, group: <span class="s">&quot;staff&quot;</span>, mode: <span class="n">0o600</span>}
+<span class="t">File</span>.open(<span class="s">&quot;my.dump&quot;</span>, <span class="s">&quot;w&quot;</span>) <span class="k">do</span> <span class="o">|</span>file<span class="o">|</span>
+  <span class="t">Gdbmish</span><span class="t">::</span><span class="t">Dump</span><span class="t">::</span><span class="t">Ascii</span>.<span class="k">new</span>(<span class="o">**</span>fileoptions).dump(io) <span class="k">do</span> <span class="o">|</span>appender<span class="o">|</span>
+    <span class="t">MyDataSource</span>.each <span class="k">do</span> <span class="o">|</span>key, value<span class="o">|</span>
+      appender <span class="o">&lt;&lt;</span> {key.to_s, value.to_s}
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
 <h2><a id="development" class="anchor" href="#development">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
@@ -140,11 +170,6 @@ string <span class="o">=</span> <span class="t">Gdbmish</span><span class="t">::
 </a>Limitations</h2>
 <ul>
 <li>Currently only supports the ASCII format and not the Binary format</li>
-<li>Currently requires a <code>Hash</code> or <code>NamedTuple</code> with <code>String</code> keys and values
-<ul>
-<li>it would be nice to provide a &quot;consumer&quot; style API for dumping larger data sets</li>
-</ul>
-</li>
 <li>Currently only supports creating a dump
 <ul>
 <li>it would be nice to also read dumps</li>
