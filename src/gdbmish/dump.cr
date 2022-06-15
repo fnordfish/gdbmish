@@ -17,7 +17,7 @@ module Gdbmish
         getter count
 
         def initialize(@io : IO)
-          @count = 0
+          @count = 0_u64
         end
 
         # Push a `{"key", "value"}` `Tuple` onto the dump
@@ -130,7 +130,7 @@ module Gdbmish
         io.puts("# End of header")
       end
 
-      private def dump_footer!(io : IO, count : Int64) : Nil
+      private def dump_footer!(io : IO, count : UInt64) : Nil
         io.printf("#:count=%d\n", count)
         io.puts("# End of data")
       end
