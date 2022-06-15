@@ -32,11 +32,11 @@ GDBMish does that by reimplementing the `gdpm_dump` ASCII format without compili
 
 ## Usage
 
-```crystal
-require "gdbmish"
-```
+Create a GDBM Dump:
 
 ```crystal
+require "gdbmish"
+
 # Get dump as String
 string = Gdbmish::Dump.ascii({"key1" => "value", "key2" => value})
 
@@ -61,6 +61,8 @@ File.open("my.dump", "w") do |file|
   end
 end
 ```
+
+On the target host, use a tool like `gdbm_load` to convert the dump into a db that works with that hosts gdbm.
 
 ## Development
 
