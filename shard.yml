@@ -1,5 +1,5 @@
 name: gdbmish
-description: Convert crystal data structures into a `gdpm_dump` ASCII format.
+description: Convert crystal data structures into a `gdbm_dump` ASCII format.
 
 version: 0.2.0
 
