@@ -1,6 +1,6 @@
 # GDBMish
 
-Convert crystal data structures into a `gdpm_dump` ASCII format.
+Convert crystal data structures into a `gdbm_dump` ASCII format.
 
 Citing [gdbm](https://git.gnu.org.ua/gdbm.git/tree/NOTE-WARNING):
 > Gdbm files have never been `portable' between different operating systems,
@@ -13,7 +13,7 @@ Citing [gdbm](https://git.gnu.org.ua/gdbm.git/tree/NOTE-WARNING):
 > file instead. The receiving party will be able to recreate the database from
 > the dump using the gdbm_load command.
 
-GDBMish does that by reimplementing the `gdpm_dump` ASCII format without compiling against `gdbm`
+GDBMish does that by reimplementing the `gdbm_dump` ASCII format without compiling against `gdbm`
 
 [![GitHub release](https://img.shields.io/github/release/fnordfish/gdbmish.svg)](https://github.com/fnordfish/gdbmish/releases)
 [![Docs](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://fnordfish.github.io/gdbmish/)
