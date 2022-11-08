@@ -64,15 +64,31 @@ end
 
 On the target host, use a tool like `gdbm_load` to convert the dump into a db that works with that hosts gdbm.
 
+Read a GDBM Dump:
+
+```crystal
+reader = Gdbmish::Read::Ascii.new(File.open("my.dump"))
+
+# get meta data
+reader.meta.file # => "my.db"
+
+# either iterate over data:
+reader.data do |key, value|
+  puts "#{key.inspect} => #{value.inspect}"
+end
+
+# or use the Iterator to transform into Hash
+reader.data.to_h
+```
+
 ## Development
 
-TODO: Write development instructions here
+* Run specs using `crystal spec`
+* Format files using `crystal tool format`
 
 ## Limitations
 
 * Currently only supports the ASCII format and not the Binary format
-* Currently only supports creating a dump
-  + it would be nice to also read dumps 
 
 ## Contributing
 
