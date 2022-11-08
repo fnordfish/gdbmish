@@ -61,7 +61,7 @@ module Gdbmish
       # ```
       # fileoptions = {file: "test.db", uid: "1000", user: "ziggy", gid: "1000", group: "staff", mode: 0o600}
       # File.open("test.dump", "w") do |file|
-      #   Gdbmish::Dump::Ascii.new(**fileoptions).dump(io) do |appender|
+      #   Gdbmish::Dump::Ascii.new(**fileoptions).dump(file) do |appender|
       #     MyDataSource.each do |key, value|
       #       appender << {key.to_s, value.to_s}
       #     end
@@ -162,7 +162,7 @@ module Gdbmish
       end
     end
 
-    # Yields a `Ascii::Appender` which consumes key-value `Tuple`s.
+    # Yields a `Ascii::Appender` which consumes key/value `Tuple`s.
     # Returns a standard ASCII format as a new `String`.
     #
     # For *fileoptions* see `Dump::Ascii.new`
@@ -181,7 +181,7 @@ module Gdbmish
       end
     end
 
-    # Yields a `Ascii::Appender` which consumes key-value `Tuple`s.
+    # Yields a `Ascii::Appender` which consumes key/value `Tuple`s.
     # Dumps a standard ASCII format into *io*.
     #
     # For *fileoptions* see `Dump::Ascii.new`
