@@ -159,7 +159,8 @@ module Gdbmish
       end
     end
 
-    # Iterates over lines, joining wrapped data lines.
+    # Iterates over lines, skiping comments, joining wrapped lines.
+    # Lines are alternating key or value in encodded form.
     struct AsciiLineIterator(I)
       include Iterator(String)
 
@@ -169,21 +170,31 @@ module Gdbmish
       def initialize(@io : I)
       end
 
-      def next
-        while line = @io.gets
-          next if line.not_nil!.each_byte.first == COMMENT_BYTE
+      # :nodoc: Fall back to using closure variable for Crystal 1.0.0. Use "break value" for later versions
+      private macro def_next
+        def next : String | Iterator::Stop
+          {% if Crystal::VERSION == "1.0.0" %}
+          data : String?
+          {% end %}
+          while line = @io.gets
+            next if line.not_nil!.each_byte.first == COMMENT_BYTE
 
-          data = String.build do |str|
-            str << line
+            data = String.build do |str|
+              str << line
 
-            while !next_is_comment?
-              str << @io.gets
+              while !next_is_comment?
+                str << @io.gets
+              end
             end
-          end
 
-          break data
-        end || stop
+            break {% if Crystal::VERSION > "1.0.0" %} data {% end %}
+          end {% if Crystal::VERSION > "1.0.0" %} || stop {% else %}
+          data.nil? ? stop : data.not_nil!
+          {% end %}
+        end
       end
+
+      def_next
 
       private def next_is_comment?
         next_byte = @io.read_byte
