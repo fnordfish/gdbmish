@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.3.2">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="gdbmish">
 
@@ -81,6 +81,36 @@
       
     </li>
   
+  <li class="parent " data-id="gdbmish/Gdbmish/Read" data-name="gdbmish::read">
+      <a href="../Gdbmish/Read.html">Read</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gdbmish/Gdbmish/Read/Ascii" data-name="gdbmish::read::ascii">
+      <a href="../Gdbmish/Read/Ascii.html">Ascii</a>
+      
+    </li>
+  
+  <li class=" " data-id="gdbmish/Gdbmish/Read/AsciiDataIterator" data-name="gdbmish::read::asciidataiterator(i)">
+      <a href="../Gdbmish/Read/AsciiDataIterator.html">AsciiDataIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="gdbmish/Gdbmish/Read/AsciiLineIterator" data-name="gdbmish::read::asciilineiterator(i)">
+      <a href="../Gdbmish/Read/AsciiLineIterator.html">AsciiLineIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="gdbmish/Gdbmish/Read/AsciiMetaData" data-name="gdbmish::read::asciimetadata">
+      <a href="../Gdbmish/Read/AsciiMetaData.html">AsciiMetaData</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
 </ul>
 
       
@@ -140,7 +170,7 @@ See <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid
   </h2>
   
     
-      <a href="https://github.com/fnordfish/gdbmish/blob/bb36bcfadad0cc947fdde89d9307ae3f93a7d641/src/gdbmish/dump.cr#L9" target="_blank">
+      <a href="https://github.com/fnordfish/gdbmish/blob/06e53d9e9fa355253209cc248ade7538ba7fbb3f/src/gdbmish/dump.cr#L9" target="_blank">
         gdbmish/dump.cr
       </a>
     
@@ -180,14 +210,14 @@ See <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid
       <li class="entry-summary">
         <a href="#ascii%28io%3AIO%2C%2A%2Afileoptions%2C%26block%3AAscii%3A%3AAppender-%3E_%29%3AString-class-method" class="signature"><strong>.ascii</strong>(io : IO, **fileoptions, &block : Ascii::Appender -> _) : String</a>
         
-          <div class="summary"><p>Yields a <code><a href="../Gdbmish/Dump/Ascii/Appender.html">Ascii::Appender</a></code> which consumes key-value <code>Tuple</code>s.</p></div>
+          <div class="summary"><p>Yields a <code><a href="../Gdbmish/Dump/Ascii/Appender.html">Ascii::Appender</a></code> which consumes key/value <code>Tuple</code>s.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#ascii%28%2A%2Afileoptions%2C%26block%3AAscii%3A%3AAppender-%3E_%29%3AString-class-method" class="signature"><strong>.ascii</strong>(**fileoptions, &block : Ascii::Appender -> _) : String</a>
         
-          <div class="summary"><p>Yields a <code><a href="../Gdbmish/Dump/Ascii/Appender.html">Ascii::Appender</a></code> which consumes key-value <code>Tuple</code>s.</p></div>
+          <div class="summary"><p>Yields a <code><a href="../Gdbmish/Dump/Ascii/Appender.html">Ascii::Appender</a></code> which consumes key/value <code>Tuple</code>s.</p></div>
         
       </li>
     
@@ -234,7 +264,7 @@ See <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/bb36bcfadad0cc947fdde89d9307ae3f93a7d641/src/gdbmish/dump.cr#L147" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/06e53d9e9fa355253209cc248ade7538ba7fbb3f/src/gdbmish/dump.cr#L147" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -258,7 +288,7 @@ See <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/bb36bcfadad0cc947fdde89d9307ae3f93a7d641/src/gdbmish/dump.cr#L159" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/06e53d9e9fa355253209cc248ade7538ba7fbb3f/src/gdbmish/dump.cr#L159" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -273,7 +303,7 @@ See <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid
       
         <div class="doc">
           
-          <p>Yields a <code><a href="../Gdbmish/Dump/Ascii/Appender.html">Ascii::Appender</a></code> which consumes key-value <code>Tuple</code>s.
+          <p>Yields a <code><a href="../Gdbmish/Dump/Ascii/Appender.html">Ascii::Appender</a></code> which consumes key/value <code>Tuple</code>s.
 Dumps a standard ASCII format into <em>io</em>.</p>
 <p>For <em>fileoptions</em> see <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid%3AString%3F%3Dnil%2Cuser%3AString%3F%3Dnil%2Cgid%3AString%3F%3Dnil%2Cgroup%3AString%3F%3Dnil%2Cmode%3AInt32%3F%3Dnil%29-class-method">Dump::Ascii.new</a></code></p>
 <p>Example:</p>
@@ -287,7 +317,7 @@ Dumps a standard ASCII format into <em>io</em>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/bb36bcfadad0cc947fdde89d9307ae3f93a7d641/src/gdbmish/dump.cr#L197" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/06e53d9e9fa355253209cc248ade7538ba7fbb3f/src/gdbmish/dump.cr#L197" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -302,7 +332,7 @@ Dumps a standard ASCII format into <em>io</em>.</p>
       
         <div class="doc">
           
-          <p>Yields a <code><a href="../Gdbmish/Dump/Ascii/Appender.html">Ascii::Appender</a></code> which consumes key-value <code>Tuple</code>s.
+          <p>Yields a <code><a href="../Gdbmish/Dump/Ascii/Appender.html">Ascii::Appender</a></code> which consumes key/value <code>Tuple</code>s.
 Returns a standard ASCII format as a new <code>String</code>.</p>
 <p>For <em>fileoptions</em> see <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid%3AString%3F%3Dnil%2Cuser%3AString%3F%3Dnil%2Cgid%3AString%3F%3Dnil%2Cgroup%3AString%3F%3Dnil%2Cmode%3AInt32%3F%3Dnil%29-class-method">Dump::Ascii.new</a></code></p>
 <p>Example:</p>
@@ -316,7 +346,7 @@ Returns a standard ASCII format as a new <code>String</code>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/bb36bcfadad0cc947fdde89d9307ae3f93a7d641/src/gdbmish/dump.cr#L178" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/06e53d9e9fa355253209cc248ade7538ba7fbb3f/src/gdbmish/dump.cr#L178" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -9,13 +9,13 @@
 
 
 
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/doc.js"></script>
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="gdbmish">
-  <title>Gdbmish - gdbmish main</title>
+  <title>Gdbmish::Read - gdbmish main</title>
   <script type="text/javascript">
-    CrystalDocs.base_path = "";
+    CrystalDocs.base_path = "../";
   </script>
 </head>
 <body>
@@ -33,7 +33,7 @@
 
     <div class="project-summary">
       <h1 class="project-name">
-        <a href="index.html">
+        <a href="../index.html">
           gdbmish
         </a>
       </h1>
@@ -52,22 +52,22 @@
     <ul>
   
   <li class="parent open current" data-id="gdbmish/Gdbmish" data-name="gdbmish">
-      <a href="Gdbmish.html">Gdbmish</a>
+      <a href="../Gdbmish.html">Gdbmish</a>
       
         <ul>
   
   <li class="parent " data-id="gdbmish/Gdbmish/Dump" data-name="gdbmish::dump">
-      <a href="Gdbmish/Dump.html">Dump</a>
+      <a href="../Gdbmish/Dump.html">Dump</a>
       
         <ul>
   
   <li class="parent " data-id="gdbmish/Gdbmish/Dump/Ascii" data-name="gdbmish::dump::ascii">
-      <a href="Gdbmish/Dump/Ascii.html">Ascii</a>
+      <a href="../Gdbmish/Dump/Ascii.html">Ascii</a>
       
         <ul>
   
   <li class=" " data-id="gdbmish/Gdbmish/Dump/Ascii/Appender" data-name="gdbmish::dump::ascii::appender">
-      <a href="Gdbmish/Dump/Ascii/Appender.html">Appender</a>
+      <a href="../Gdbmish/Dump/Ascii/Appender.html">Appender</a>
       
     </li>
   
@@ -81,28 +81,28 @@
       
     </li>
   
-  <li class="parent " data-id="gdbmish/Gdbmish/Read" data-name="gdbmish::read">
-      <a href="Gdbmish/Read.html">Read</a>
+  <li class="parent open current" data-id="gdbmish/Gdbmish/Read" data-name="gdbmish::read">
+      <a href="../Gdbmish/Read.html">Read</a>
       
         <ul>
   
   <li class=" " data-id="gdbmish/Gdbmish/Read/Ascii" data-name="gdbmish::read::ascii">
-      <a href="Gdbmish/Read/Ascii.html">Ascii</a>
+      <a href="../Gdbmish/Read/Ascii.html">Ascii</a>
       
     </li>
   
   <li class=" " data-id="gdbmish/Gdbmish/Read/AsciiDataIterator" data-name="gdbmish::read::asciidataiterator(i)">
-      <a href="Gdbmish/Read/AsciiDataIterator.html">AsciiDataIterator</a>
+      <a href="../Gdbmish/Read/AsciiDataIterator.html">AsciiDataIterator</a>
       
     </li>
   
   <li class=" " data-id="gdbmish/Gdbmish/Read/AsciiLineIterator" data-name="gdbmish::read::asciilineiterator(i)">
-      <a href="Gdbmish/Read/AsciiLineIterator.html">AsciiLineIterator</a>
+      <a href="../Gdbmish/Read/AsciiLineIterator.html">AsciiLineIterator</a>
       
     </li>
   
   <li class=" " data-id="gdbmish/Gdbmish/Read/AsciiMetaData" data-name="gdbmish::read::asciimetadata">
-      <a href="Gdbmish/Read/AsciiMetaData.html">AsciiMetaData</a>
+      <a href="../Gdbmish/Read/AsciiMetaData.html">AsciiMetaData</a>
       
     </li>
   
@@ -125,7 +125,7 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">module</span> Gdbmish
+  <span class="kind">module</span> Gdbmish::Read
 
 </h1>
 
@@ -142,7 +142,8 @@
     Overview
   </h2>
 
-  <p>See <code><a href="Gdbmish/Dump.html">Gdbmish::Dump</a></code> for generating dumps from data</p>
+  <p>Wrapper for reading GDBM dump files. Currently, only Ascii (aka standard) format is supported.</p>
+<p>See <code><a href="../Gdbmish/Read/Ascii.html">Read::Ascii</a></code> for the main high level interface.</p>
 
 
 
@@ -167,21 +168,7 @@
   </h2>
   
     
-      <a href="https://github.com/fnordfish/gdbmish/blob/06e53d9e9fa355253209cc248ade7538ba7fbb3f/src/gdbmish.cr#L4" target="_blank">
-        gdbmish.cr
-      </a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/fnordfish/gdbmish/blob/06e53d9e9fa355253209cc248ade7538ba7fbb3f/src/gdbmish/dump.cr#L3" target="_blank">
-        gdbmish/dump.cr
-      </a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/fnordfish/gdbmish/blob/06e53d9e9fa355253209cc248ade7538ba7fbb3f/src/gdbmish/read.cr#L3" target="_blank">
+      <a href="https://github.com/fnordfish/gdbmish/blob/06e53d9e9fa355253209cc248ade7538ba7fbb3f/src/gdbmish/read.cr#L7" target="_blank">
         gdbmish/read.cr
       </a>
     
@@ -189,25 +176,6 @@
   
 
 
-
-  
-    <h2>
-      <a id="constant-summary" class="anchor" href="#constant-summary">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-      Constant Summary
-    </h2>
-  
-  <dl>
-    
-      <dt class="entry-const" id="VERSION">
-        <strong>VERSION</strong> = <code><span class="o">{{</span> <span class="s">&quot;</span><span class="i">#{</span>(system(<span class="s">&quot;shards version&quot;</span>)).strip<span class="i">}</span><span class="s">&quot;</span> }}</code>
-      </dt>
-      
-    
-  </dl>
 
 
 
