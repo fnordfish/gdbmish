@@ -38,11 +38,11 @@ Create a GDBM Dump:
 require "gdbmish"
 
 # Get dump as String
-string = Gdbmish::Dump.ascii({"key1" => "value", "key2" => value})
+string = Gdbmish::Dump.ascii({"key1" => "value", "key2" => "value2"})
 
 # Write directly into File (or any other IO)
 File.open("my_db.dump", "w") do |file|
-  Gdbmish::Dump.ascii({"key1" => "value", "key2" => value}, file)
+  Gdbmish::Dump.ascii({"key1" => "value", "key2" => "value2"}, file)
 end
 
 # Provide an original filename
