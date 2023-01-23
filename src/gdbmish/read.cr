@@ -215,14 +215,15 @@ module Gdbmish
       end
 
       def next
-        return k if (k = wrapped_next).is_a?(Iterator::Stop)
+        k = wrapped_next
+        return k if k.is_a?(Iterator::Stop)
 
         k = Base64.decode_string(k)
 
-        return {k, nil} if (v = wrapped_next).is_a?(Iterator::Stop)
+        v = wrapped_next
+        return {k, nil} if v.is_a?(Iterator::Stop)
 
         v = Base64.decode_string(v)
-
         {k, v}
       end
     end
