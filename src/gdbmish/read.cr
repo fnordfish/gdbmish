@@ -95,7 +95,8 @@ module Gdbmish
 
       # Parse given IO for meta data.
       # Reads from +io+ until a `"# End of header"` line is found (enhancing its `pos`).
-      # By default, ignores reading the `count` (indecating the amount of datasets in the file) because it is written at the end of the file.
+      # By default, ignores reading the `count` (indecating the amount of datasets in the file)
+      # because it is written at the end of the file.
       def self.parse(io : IO, ignore_count = true)
         version : String? = nil
         file : String? = nil
