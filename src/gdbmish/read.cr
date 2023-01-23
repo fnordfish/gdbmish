@@ -106,7 +106,6 @@ module Gdbmish
         mode : Int32? = nil
         count : UInt64? = nil
 
-        lines_read = 0_u64
         while line = io.gets
           break if line == "# End of header"
 
