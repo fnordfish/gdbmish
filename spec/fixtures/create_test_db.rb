@@ -18,12 +18,8 @@ end
 
 require 'gdbm'
 
-data = {
-  "föö"  => "bää\n🤦‍♂️",
-  "foo2" => "bar2",
-  "foo"  => ("bar-"*128)
-}
+DATA = eval(File.read(File.join(__dir__, "data.rb")))
 
-GDBM.open("test.db", 0666, GDBM::NEWDB) do |db|
-  data.each { |k,v| db[k] = v }
+GDBM.open(File.join(__dir__, "test.db"), 0666, GDBM::NEWDB) do |db|
+  DATA.each { |k,v| db[k] = v }
 end

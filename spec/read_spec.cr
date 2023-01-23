@@ -17,14 +17,18 @@ describe Gdbmish::Read::Ascii do
       "otherKey" => "Other\nValue",
     })
 
-    meta = file.meta.not_nil!
-    meta.file.should eq "test.db"
-    meta.uid.should eq "1000"
-    meta.user.should eq "ziggy"
-    meta.gid.should eq "1000"
-    meta.group.should eq "staff"
-    meta.mode.should eq 0o640
-    meta.count.should eq(2)
+    meta = file.meta
+    meta.should_not be_nil
+
+    if meta
+      meta.file.should eq "test.db"
+      meta.uid.should eq "1000"
+      meta.user.should eq "ziggy"
+      meta.gid.should eq "1000"
+      meta.group.should eq "staff"
+      meta.mode.should eq 0o640
+      meta.count.should eq(2)
+    end
   end
 
   it "load_meta: false skips loading meta" do
@@ -35,15 +39,21 @@ describe Gdbmish::Read::Ascii do
 
   it "load_meta: true skips loading count in meta" do
     f = Gdbmish::Read::Ascii.new(dumped_file, load_meta: true)
-    f.meta.should be_a(Gdbmish::Read::AsciiMetaData)
-    f.meta.not_nil!.count.should be_nil
+
+    meta = f.meta
+    meta.should be_a(Gdbmish::Read::AsciiMetaData)
+    meta.count.should be_nil if meta
+
     f.data.to_h.should eq(data_hash)
   end
 
   it "load_meta: :count loads count in meta" do
     f = Gdbmish::Read::Ascii.new(dumped_file, load_meta: :count)
-    f.meta.should be_a(Gdbmish::Read::AsciiMetaData)
-    f.meta.not_nil!.count.should eq(3)
+
+    meta = f.meta
+    meta.should be_a(Gdbmish::Read::AsciiMetaData)
+    meta.count.should eq(data_hash.size) if meta
+
     f.data.to_h.should eq(data_hash)
   end
 end
@@ -51,29 +61,29 @@ end
 describe Gdbmish::Read::AsciiMetaData do
   describe ".parse" do
     it "Reads meta data_hash, skiping count" do
-      data_hash = Gdbmish::Read::AsciiMetaData.parse(dumped_file)
-      data_hash.count.should be_nil
-      data_hash.file.should eq "test.db"
-      data_hash.gid.should eq "20"
-      data_hash.group.should eq "staff"
-      data_hash.mode.should eq 0o600
-      data_hash.uid.should eq "501"
-      data_hash.user.should eq "robertschulze"
-      data_hash.version.should eq "1.1"
+      metae_data = Gdbmish::Read::AsciiMetaData.parse(dumped_file)
+      metae_data.count.should be_nil
+      metae_data.file.should eq "spec/fixtures/test.db"
+      metae_data.gid.should eq "20"
+      metae_data.group.should eq "staff"
+      metae_data.mode.should eq 0o644
+      metae_data.uid.should eq "501"
+      metae_data.user.should eq "robertschulze"
+      metae_data.version.should eq "1.1"
     end
   end
 
   describe ".parse ignore_count: false" do
     it "Reads meta data_hash, including count" do
-      data_hash = Gdbmish::Read::AsciiMetaData.parse(dumped_file, ignore_count: false)
-      data_hash.count.should eq 3
-      data_hash.file.should eq "test.db"
-      data_hash.gid.should eq "20"
-      data_hash.group.should eq "staff"
-      data_hash.mode.should eq 0o600
-      data_hash.uid.should eq "501"
-      data_hash.user.should eq "robertschulze"
-      data_hash.version.should eq "1.1"
+      meta_data = Gdbmish::Read::AsciiMetaData.parse(dumped_file, ignore_count: false)
+      meta_data.count.should eq data_hash.size
+      meta_data.file.should eq "spec/fixtures/test.db"
+      meta_data.gid.should eq "20"
+      meta_data.group.should eq "staff"
+      meta_data.mode.should eq 0o644
+      meta_data.uid.should eq "501"
+      meta_data.user.should eq "robertschulze"
+      meta_data.version.should eq "1.1"
     end
   end
 end

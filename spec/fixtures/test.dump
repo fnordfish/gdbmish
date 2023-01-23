@@ -1,13 +1,25 @@
-# GDBM dump file created by GDBM version 1.23. 04/02/2022 (built Feb  5 2022 18:08:24) on Mon Jun 13 16:53:10 2022
+# GDBM dump file created by GDBM version 1.23. 04/02/2022 (built Nov 15 2022 03:36:30) on Mon Jan 23 11:05:18 2023
 #:version=1.1
-#:file=test.db
-#:uid=501,user=robertschulze,gid=20,group=staff,mode=600
+#:file=spec/fixtures/test.db
+#:uid=501,user=robertschulze,gid=20,group=staff,mode=644
 #:format=standard
 # End of header
+#:len=17
+bXVsdGlsaW5lIGNvbnRlbnQ=
+#:len=29
+VGhpcyBpcyBhCm11bHRpbGluZQoKc3RyaW5nLgo=
 #:len=5
 ZsO2w7Y=
 #:len=19
 YsOkw6QK8J+kpuKAjeKZgu+4jw==
+#:len=18
+bWl4ZWQgY3JsZiBjb250ZW50
+#:len=51
+VGhpcyBpcyBhDW11bHRpbGluZSBzdHJpbmcNCndpdGggbWl4ZWQNCgpuZXdsaW5lcy4K
+#:len=20
+ZG91YmxlLcOpc2NhcMOoOlxcYzM=
+#:len=15
+QVxURVNUXGMzw6lsZW5l
 #:len=4
 Zm9vMg==
 #:len=4
@@ -24,5 +36,5 @@ YXItYmFyLWJhci1iYXItYmFyLWJhci1iYXItYmFyLWJhci1iYXItYmFyLWJhci1iYXItYmFyLWJh
 ci1iYXItYmFyLWJhci1iYXItYmFyLWJhci1iYXItYmFyLWJhci1iYXItYmFyLWJhci1iYXItYmFy
 LWJhci1iYXItYmFyLWJhci1iYXItYmFyLWJhci1iYXItYmFyLWJhci1iYXItYmFyLWJhci1iYXIt
 YmFyLWJhci1iYXItYmFyLWJhci1iYXItYmFyLWJhci1iYXItYmFyLWJhci1iYXItYmFyLWJhci0=
-#:count=3
+#:count=6
 # End of data
