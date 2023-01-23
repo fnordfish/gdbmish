@@ -215,17 +215,13 @@ module Gdbmish
       end
 
       def next
-        if (k = wrapped_next).is_a?(Iterator::Stop)
-          return k
-        else
-          k = Base64.decode_string(k)
-        end
+        return k if (k = wrapped_next).is_a?(Iterator::Stop)
 
-        if (v = wrapped_next).is_a?(Iterator::Stop)
-          v = nil
-        else
-          v = Base64.decode_string(v)
-        end
+        k = Base64.decode_string(k)
+
+        return {k, nil} if (v = wrapped_next).is_a?(Iterator::Stop)
+
+        v = Base64.decode_string(v)
 
         {k, v}
       end
