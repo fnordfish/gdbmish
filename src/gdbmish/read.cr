@@ -153,7 +153,7 @@ module Gdbmish
           next unless line.starts_with?("#:count")
           count = line.split('=')[1].to_u64
         end
-        io.pos = end_of_header_pos.not_nil!
+        io.pos = end_of_header_pos
 
         count
       end

@@ -85,7 +85,7 @@ module Gdbmish
         yield appender
         dump_footer!(io, appender.count)
 
-        return io
+        io
       end
 
       def dump(io : IO, data : (Hash | NamedTuple)) : IO
@@ -97,7 +97,7 @@ module Gdbmish
         end
         dump_footer!(io, appender.count)
 
-        return io
+        io
       end
 
       private def dump_header!(io : IO) : Nil
