@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.6.2">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="gdbmish">
 
@@ -192,7 +192,7 @@ Gdbmish::Read::AsciiMetaData(
   </h2>
   
     
-      <a href="https://github.com/fnordfish/gdbmish/blob/9ee6495bcd3bae8d8c80386d8ec963f25384be2c/src/gdbmish/read.cr#L39" target="_blank">
+      <a href="https://github.com/fnordfish/gdbmish/blob/ad4f706068201171aaaab286700a415afdecef7b/src/gdbmish/read.cr#L39" target="_blank">
         gdbmish/read.cr
       </a>
     
@@ -244,14 +244,14 @@ Gdbmish::Read::AsciiMetaData(
       </li>
     
       <li class="entry-summary">
-        <a href="#data%28%26block%3AString%2CString%3F-%3E_%29%3ANil-instance-method" class="signature"><strong>#data</strong>(&block : String, String? -> _) : Nil</a>
+        <a href="#data%28%26block%3AString%2CString%7CNil-%3E_%29%3ANil-instance-method" class="signature"><strong>#data</strong>(&block : String, String | Nil -> _) : Nil</a>
         
           <div class="summary"><p>Shortcut for <code>data.each { |key, value| }</code></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#meta%3AAsciiMetaData%3F-instance-method" class="signature"><strong>#meta</strong> : AsciiMetaData?</a>
+        <a href="#meta%3AAsciiMetaData%7CNil-instance-method" class="signature"><strong>#meta</strong> : AsciiMetaData | Nil</a>
         
           <div class="summary"><p>Parses for meta data, depending on the <em>load_meta</em> value in <code><a href="../../Gdbmish/Read/Ascii.html#new%28io%3AIO%2Cload_meta%3ABool%7CSymbol%3Dtrue%29-class-method">.new</a></code></p></div>
         
@@ -333,7 +333,7 @@ Gdbmish::Read::AsciiMetaData(
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/9ee6495bcd3bae8d8c80386d8ec963f25384be2c/src/gdbmish/read.cr#L49" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/ad4f706068201171aaaab286700a415afdecef7b/src/gdbmish/read.cr#L49" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -371,17 +371,17 @@ Gdbmish::Read::AsciiMetaData(
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/9ee6495bcd3bae8d8c80386d8ec963f25384be2c/src/gdbmish/read.cr#L59" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/ad4f706068201171aaaab286700a415afdecef7b/src/gdbmish/read.cr#L59" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="data(&amp;block:String,String?-&gt;_):Nil-instance-method">
+    <div class="entry-detail" id="data(&amp;block:String,String|Nil-&gt;_):Nil-instance-method">
       <div class="signature">
         
-        def <strong>data</strong>(&block : String, String? -> _) : Nil
+        def <strong>data</strong>(&block : String, String | Nil -> _) : Nil
 
-        <a class="method-permalink" href="#data%28%26block%3AString%2CString%3F-%3E_%29%3ANil-instance-method">#</a>
+        <a class="method-permalink" href="#data%28%26block%3AString%2CString%7CNil-%3E_%29%3ANil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -392,17 +392,17 @@ Gdbmish::Read::AsciiMetaData(
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/9ee6495bcd3bae8d8c80386d8ec963f25384be2c/src/gdbmish/read.cr#L65" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/ad4f706068201171aaaab286700a415afdecef7b/src/gdbmish/read.cr#L65" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="meta:AsciiMetaData?-instance-method">
+    <div class="entry-detail" id="meta:AsciiMetaData|Nil-instance-method">
       <div class="signature">
         
-        def <strong>meta</strong> : <a href="../../Gdbmish/Read/AsciiMetaData.html">AsciiMetaData</a>?
+        def <strong>meta</strong> : <a href="../../Gdbmish/Read/AsciiMetaData.html">AsciiMetaData</a> | Nil
 
-        <a class="method-permalink" href="#meta%3AAsciiMetaData%3F-instance-method">#</a>
+        <a class="method-permalink" href="#meta%3AAsciiMetaData%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -413,7 +413,7 @@ Gdbmish::Read::AsciiMetaData(
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/9ee6495bcd3bae8d8c80386d8ec963f25384be2c/src/gdbmish/read.cr#L70" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/ad4f706068201171aaaab286700a415afdecef7b/src/gdbmish/read.cr#L70" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.6.2">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="gdbmish">
 
@@ -169,7 +169,7 @@
   </h2>
   
     
-      <a href="https://github.com/fnordfish/gdbmish/blob/9ee6495bcd3bae8d8c80386d8ec963f25384be2c/src/gdbmish/read.cr#L82" target="_blank">
+      <a href="https://github.com/fnordfish/gdbmish/blob/ad4f706068201171aaaab286700a415afdecef7b/src/gdbmish/read.cr#L82" target="_blank">
         gdbmish/read.cr
       </a>
     
@@ -191,7 +191,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28version%3AString%3F%3Dnil%2Cfile%3AString%3F%3Dnil%2Cuid%3AString%3F%3Dnil%2Cuser%3AString%3F%3Dnil%2Cgid%3AString%3F%3Dnil%2Cgroup%3AString%3F%3Dnil%2Cmode%3AInt32%3F%3Dnil%2Ccount%3AUInt64%3F%3Dnil%29-class-method" class="signature"><strong>.new</strong>(version : String? = <span class="n">nil</span>, file : String? = <span class="n">nil</span>, uid : String? = <span class="n">nil</span>, user : String? = <span class="n">nil</span>, gid : String? = <span class="n">nil</span>, group : String? = <span class="n">nil</span>, mode : Int32? = <span class="n">nil</span>, count : UInt64? = <span class="n">nil</span>)</a>
+        <a href="#new%28version%3ANil%7CString%3Dnil%2Cfile%3ANil%7CString%3Dnil%2Cuid%3ANil%7CString%3Dnil%2Cuser%3ANil%7CString%3Dnil%2Cgid%3ANil%7CString%3Dnil%2Cgroup%3ANil%7CString%3Dnil%2Cmode%3AInt32%7CNil%3Dnil%2Ccount%3AUInt64%7CNil%3Dnil%29-class-method" class="signature"><strong>.new</strong>(version : Nil | String = <span class="n">nil</span>, file : Nil | String = <span class="n">nil</span>, uid : Nil | String = <span class="n">nil</span>, user : Nil | String = <span class="n">nil</span>, gid : Nil | String = <span class="n">nil</span>, group : Nil | String = <span class="n">nil</span>, mode : Int32 | Nil = <span class="n">nil</span>, count : UInt64 | Nil = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -231,44 +231,44 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#count%3AUInt64%3F-instance-method" class="signature"><strong>#count</strong> : UInt64?</a>
+        <a href="#count%3AUInt64%7CNil-instance-method" class="signature"><strong>#count</strong> : UInt64 | Nil</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#file%3AString%3F-instance-method" class="signature"><strong>#file</strong> : String?</a>
+        <a href="#file%3AString%7CNil-instance-method" class="signature"><strong>#file</strong> : String | Nil</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#gid%3AString%3F-instance-method" class="signature"><strong>#gid</strong> : String?</a>
+        <a href="#gid%3AString%7CNil-instance-method" class="signature"><strong>#gid</strong> : String | Nil</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#group%3AString%3F-instance-method" class="signature"><strong>#group</strong> : String?</a>
+        <a href="#group%3AString%7CNil-instance-method" class="signature"><strong>#group</strong> : String | Nil</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#mode%3AInt32%3F-instance-method" class="signature"><strong>#mode</strong> : Int32?</a>
+        <a href="#mode%3AInt32%7CNil-instance-method" class="signature"><strong>#mode</strong> : Int32 | Nil</a>
         
           <div class="summary"><p>octal unix file mode</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#uid%3AString%3F-instance-method" class="signature"><strong>#uid</strong> : String?</a>
+        <a href="#uid%3AString%7CNil-instance-method" class="signature"><strong>#uid</strong> : String | Nil</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#user%3AString%3F-instance-method" class="signature"><strong>#user</strong> : String?</a>
+        <a href="#user%3AString%7CNil-instance-method" class="signature"><strong>#user</strong> : String | Nil</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#version%3AString%3F-instance-method" class="signature"><strong>#version</strong> : String?</a>
+        <a href="#version%3AString%7CNil-instance-method" class="signature"><strong>#version</strong> : String | Nil</a>
         
       </li>
     
@@ -322,18 +322,18 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(version:String?=nil,file:String?=nil,uid:String?=nil,user:String?=nil,gid:String?=nil,group:String?=nil,mode:Int32?=nil,count:UInt64?=nil)-class-method">
+    <div class="entry-detail" id="new(version:Nil|String=nil,file:Nil|String=nil,uid:Nil|String=nil,user:Nil|String=nil,gid:Nil|String=nil,group:Nil|String=nil,mode:Int32|Nil=nil,count:UInt64|Nil=nil)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(version : String? = <span class="n">nil</span>, file : String? = <span class="n">nil</span>, uid : String? = <span class="n">nil</span>, user : String? = <span class="n">nil</span>, gid : String? = <span class="n">nil</span>, group : String? = <span class="n">nil</span>, mode : Int32? = <span class="n">nil</span>, count : UInt64? = <span class="n">nil</span>)
+        def self.<strong>new</strong>(version : Nil | String = <span class="n">nil</span>, file : Nil | String = <span class="n">nil</span>, uid : Nil | String = <span class="n">nil</span>, user : Nil | String = <span class="n">nil</span>, gid : Nil | String = <span class="n">nil</span>, group : Nil | String = <span class="n">nil</span>, mode : Int32 | Nil = <span class="n">nil</span>, count : UInt64 | Nil = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#new%28version%3AString%3F%3Dnil%2Cfile%3AString%3F%3Dnil%2Cuid%3AString%3F%3Dnil%2Cuser%3AString%3F%3Dnil%2Cgid%3AString%3F%3Dnil%2Cgroup%3AString%3F%3Dnil%2Cmode%3AInt32%3F%3Dnil%2Ccount%3AUInt64%3F%3Dnil%29-class-method">#</a>
+        <a class="method-permalink" href="#new%28version%3ANil%7CString%3Dnil%2Cfile%3ANil%7CString%3Dnil%2Cuid%3ANil%7CString%3Dnil%2Cuser%3ANil%7CString%3Dnil%2Cgid%3ANil%7CString%3Dnil%2Cgroup%3ANil%7CString%3Dnil%2Cmode%3AInt32%7CNil%3Dnil%2Ccount%3AUInt64%7CNil%3Dnil%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/9ee6495bcd3bae8d8c80386d8ec963f25384be2c/src/gdbmish/read.cr#L93" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/ad4f706068201171aaaab286700a415afdecef7b/src/gdbmish/read.cr#L93" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -362,13 +362,14 @@
           
           <p>Parse given IO for meta data.
 Reads from +io+ until a <code>&quot;# End of header&quot;</code> line is found (enhancing its <code>pos</code>).
-By default, ignores reading the <code><a href="../../Gdbmish/Read/AsciiMetaData.html#count%3AUInt64%3F-instance-method">#count</a></code> (indecating the amount of datasets in the file) because it is written at the end of the file.</p>
+By default, ignores reading the <code><a href="../../Gdbmish/Read/AsciiMetaData.html#count%3AUInt64%7CNil-instance-method">#count</a></code> (indecating the amount of datasets in the file)
+because it is written at the end of the file.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/9ee6495bcd3bae8d8c80386d8ec963f25384be2c/src/gdbmish/read.cr#L99" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/ad4f706068201171aaaab286700a415afdecef7b/src/gdbmish/read.cr#L100" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -385,76 +386,76 @@ By default, ignores reading the <code><a href="../../Gdbmish/Read/AsciiMetaData.
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="count:UInt64?-instance-method">
+    <div class="entry-detail" id="count:UInt64|Nil-instance-method">
       <div class="signature">
         
-        def <strong>count</strong> : UInt64?
+        def <strong>count</strong> : UInt64 | Nil
 
-        <a class="method-permalink" href="#count%3AUInt64%3F-instance-method">#</a>
+        <a class="method-permalink" href="#count%3AUInt64%7CNil-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/9ee6495bcd3bae8d8c80386d8ec963f25384be2c/src/gdbmish/read.cr#L91" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/ad4f706068201171aaaab286700a415afdecef7b/src/gdbmish/read.cr#L91" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="file:String?-instance-method">
+    <div class="entry-detail" id="file:String|Nil-instance-method">
       <div class="signature">
         
-        def <strong>file</strong> : String?
+        def <strong>file</strong> : String | Nil
 
-        <a class="method-permalink" href="#file%3AString%3F-instance-method">#</a>
+        <a class="method-permalink" href="#file%3AString%7CNil-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/9ee6495bcd3bae8d8c80386d8ec963f25384be2c/src/gdbmish/read.cr#L84" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/ad4f706068201171aaaab286700a415afdecef7b/src/gdbmish/read.cr#L84" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="gid:String?-instance-method">
+    <div class="entry-detail" id="gid:String|Nil-instance-method">
       <div class="signature">
         
-        def <strong>gid</strong> : String?
+        def <strong>gid</strong> : String | Nil
 
-        <a class="method-permalink" href="#gid%3AString%3F-instance-method">#</a>
+        <a class="method-permalink" href="#gid%3AString%7CNil-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/9ee6495bcd3bae8d8c80386d8ec963f25384be2c/src/gdbmish/read.cr#L87" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/ad4f706068201171aaaab286700a415afdecef7b/src/gdbmish/read.cr#L87" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="group:String?-instance-method">
+    <div class="entry-detail" id="group:String|Nil-instance-method">
       <div class="signature">
         
-        def <strong>group</strong> : String?
+        def <strong>group</strong> : String | Nil
 
-        <a class="method-permalink" href="#group%3AString%3F-instance-method">#</a>
+        <a class="method-permalink" href="#group%3AString%7CNil-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/9ee6495bcd3bae8d8c80386d8ec963f25384be2c/src/gdbmish/read.cr#L88" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/ad4f706068201171aaaab286700a415afdecef7b/src/gdbmish/read.cr#L88" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="mode:Int32?-instance-method">
+    <div class="entry-detail" id="mode:Int32|Nil-instance-method">
       <div class="signature">
         
-        def <strong>mode</strong> : Int32?
+        def <strong>mode</strong> : Int32 | Nil
 
-        <a class="method-permalink" href="#mode%3AInt32%3F-instance-method">#</a>
+        <a class="method-permalink" href="#mode%3AInt32%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -465,55 +466,55 @@ By default, ignores reading the <code><a href="../../Gdbmish/Read/AsciiMetaData.
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/9ee6495bcd3bae8d8c80386d8ec963f25384be2c/src/gdbmish/read.cr#L90" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/ad4f706068201171aaaab286700a415afdecef7b/src/gdbmish/read.cr#L90" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="uid:String?-instance-method">
+    <div class="entry-detail" id="uid:String|Nil-instance-method">
       <div class="signature">
         
-        def <strong>uid</strong> : String?
+        def <strong>uid</strong> : String | Nil
 
-        <a class="method-permalink" href="#uid%3AString%3F-instance-method">#</a>
+        <a class="method-permalink" href="#uid%3AString%7CNil-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/9ee6495bcd3bae8d8c80386d8ec963f25384be2c/src/gdbmish/read.cr#L85" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/ad4f706068201171aaaab286700a415afdecef7b/src/gdbmish/read.cr#L85" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="user:String?-instance-method">
+    <div class="entry-detail" id="user:String|Nil-instance-method">
       <div class="signature">
         
-        def <strong>user</strong> : String?
+        def <strong>user</strong> : String | Nil
 
-        <a class="method-permalink" href="#user%3AString%3F-instance-method">#</a>
+        <a class="method-permalink" href="#user%3AString%7CNil-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/9ee6495bcd3bae8d8c80386d8ec963f25384be2c/src/gdbmish/read.cr#L86" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/ad4f706068201171aaaab286700a415afdecef7b/src/gdbmish/read.cr#L86" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="version:String?-instance-method">
+    <div class="entry-detail" id="version:String|Nil-instance-method">
       <div class="signature">
         
-        def <strong>version</strong> : String?
+        def <strong>version</strong> : String | Nil
 
-        <a class="method-permalink" href="#version%3AString%3F-instance-method">#</a>
+        <a class="method-permalink" href="#version%3AString%7CNil-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/9ee6495bcd3bae8d8c80386d8ec963f25384be2c/src/gdbmish/read.cr#L83" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/ad4f706068201171aaaab286700a415afdecef7b/src/gdbmish/read.cr#L83" target="_blank">View source</a>]
         
       </div>
     </div>

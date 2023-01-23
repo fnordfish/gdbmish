@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.6.2">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="gdbmish">
 
@@ -145,7 +145,7 @@
   <p>Wrapper for different dump formats, providing various shortcut methods.
 Currently, there is only <code><a href="../Gdbmish/Dump/Ascii.html">Ascii</a></code> mode.</p>
 <p>Ascii mode optionally dumps file information such as filename, owner, mode.
-See <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid%3AString%3F%3Dnil%2Cuser%3AString%3F%3Dnil%2Cgid%3AString%3F%3Dnil%2Cgroup%3AString%3F%3Dnil%2Cmode%3AInt32%3F%3Dnil%29-class-method">Dump::Ascii.new</a></code> on how they are used.</p>
+See <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%7CNil%3Dnil%2Cuid%3AString%7CNil%3Dnil%2Cuser%3AString%7CNil%3Dnil%2Cgid%3AString%7CNil%3Dnil%2Cgroup%3AString%7CNil%3Dnil%2Cmode%3AInt32%7CNil%3Dnil%29-class-method">Dump::Ascii.new</a></code> on how they are used.</p>
 
 
 
@@ -170,7 +170,7 @@ See <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid
   </h2>
   
     
-      <a href="https://github.com/fnordfish/gdbmish/blob/9ee6495bcd3bae8d8c80386d8ec963f25384be2c/src/gdbmish/dump.cr#L9" target="_blank">
+      <a href="https://github.com/fnordfish/gdbmish/blob/ad4f706068201171aaaab286700a415afdecef7b/src/gdbmish/dump.cr#L9" target="_blank">
         gdbmish/dump.cr
       </a>
     
@@ -256,7 +256,7 @@ See <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid
         <div class="doc">
           
           <p>Dump <em>data</em> as standard ASCII format into <em>io</em>.</p>
-<p>For <em>fileoptions</em> see <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid%3AString%3F%3Dnil%2Cuser%3AString%3F%3Dnil%2Cgid%3AString%3F%3Dnil%2Cgroup%3AString%3F%3Dnil%2Cmode%3AInt32%3F%3Dnil%29-class-method">Dump::Ascii.new</a></code></p>
+<p>For <em>fileoptions</em> see <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%7CNil%3Dnil%2Cuid%3AString%7CNil%3Dnil%2Cuser%3AString%7CNil%3Dnil%2Cgid%3AString%7CNil%3Dnil%2Cgroup%3AString%7CNil%3Dnil%2Cmode%3AInt32%7CNil%3Dnil%29-class-method">Dump::Ascii.new</a></code></p>
 <p>Example:</p>
 <pre><code class="language-crystal"><span class="t">Gdbmish</span><span class="t">::</span><span class="t">Dump</span>.ascii({some: <span class="s">&quot;data&quot;</span>}, io)</code></pre>
         </div>
@@ -264,7 +264,7 @@ See <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/9ee6495bcd3bae8d8c80386d8ec963f25384be2c/src/gdbmish/dump.cr#L147" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/ad4f706068201171aaaab286700a415afdecef7b/src/gdbmish/dump.cr#L147" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -280,7 +280,7 @@ See <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid
         <div class="doc">
           
           <p>Dump <em>data</em> as standard ASCII format into a new <code>String</code>.</p>
-<p>For <em>fileoptions</em> see <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid%3AString%3F%3Dnil%2Cuser%3AString%3F%3Dnil%2Cgid%3AString%3F%3Dnil%2Cgroup%3AString%3F%3Dnil%2Cmode%3AInt32%3F%3Dnil%29-class-method">Dump::Ascii.new</a></code></p>
+<p>For <em>fileoptions</em> see <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%7CNil%3Dnil%2Cuid%3AString%7CNil%3Dnil%2Cuser%3AString%7CNil%3Dnil%2Cgid%3AString%7CNil%3Dnil%2Cgroup%3AString%7CNil%3Dnil%2Cmode%3AInt32%7CNil%3Dnil%29-class-method">Dump::Ascii.new</a></code></p>
 <p>Example:</p>
 <pre><code class="language-crystal">dump <span class="o">=</span> <span class="t">Gdbmish</span><span class="t">::</span><span class="t">Dump</span>.ascii({some: <span class="s">&quot;data&quot;</span>})</code></pre>
         </div>
@@ -288,7 +288,7 @@ See <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/9ee6495bcd3bae8d8c80386d8ec963f25384be2c/src/gdbmish/dump.cr#L159" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/ad4f706068201171aaaab286700a415afdecef7b/src/gdbmish/dump.cr#L159" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -305,7 +305,7 @@ See <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid
           
           <p>Yields a <code><a href="../Gdbmish/Dump/Ascii/Appender.html">Ascii::Appender</a></code> which consumes key/value <code>Tuple</code>s.
 Dumps a standard ASCII format into <em>io</em>.</p>
-<p>For <em>fileoptions</em> see <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid%3AString%3F%3Dnil%2Cuser%3AString%3F%3Dnil%2Cgid%3AString%3F%3Dnil%2Cgroup%3AString%3F%3Dnil%2Cmode%3AInt32%3F%3Dnil%29-class-method">Dump::Ascii.new</a></code></p>
+<p>For <em>fileoptions</em> see <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%7CNil%3Dnil%2Cuid%3AString%7CNil%3Dnil%2Cuser%3AString%7CNil%3Dnil%2Cgid%3AString%7CNil%3Dnil%2Cgroup%3AString%7CNil%3Dnil%2Cmode%3AInt32%7CNil%3Dnil%29-class-method">Dump::Ascii.new</a></code></p>
 <p>Example:</p>
 <pre><code class="language-crystal">dump <span class="o">=</span> <span class="t">Gdbmish</span><span class="t">::</span><span class="t">Dump</span>.ascii(io) <span class="k">do</span> <span class="o">|</span>appender<span class="o">|</span>
   <span class="t">MyDataSource</span>.each <span class="k">do</span> <span class="o">|</span>key, value<span class="o">|</span>
@@ -317,7 +317,7 @@ Dumps a standard ASCII format into <em>io</em>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/9ee6495bcd3bae8d8c80386d8ec963f25384be2c/src/gdbmish/dump.cr#L197" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/ad4f706068201171aaaab286700a415afdecef7b/src/gdbmish/dump.cr#L197" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -334,7 +334,7 @@ Dumps a standard ASCII format into <em>io</em>.</p>
           
           <p>Yields a <code><a href="../Gdbmish/Dump/Ascii/Appender.html">Ascii::Appender</a></code> which consumes key/value <code>Tuple</code>s.
 Returns a standard ASCII format as a new <code>String</code>.</p>
-<p>For <em>fileoptions</em> see <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%3F%3Dnil%2Cuid%3AString%3F%3Dnil%2Cuser%3AString%3F%3Dnil%2Cgid%3AString%3F%3Dnil%2Cgroup%3AString%3F%3Dnil%2Cmode%3AInt32%3F%3Dnil%29-class-method">Dump::Ascii.new</a></code></p>
+<p>For <em>fileoptions</em> see <code><a href="../Gdbmish/Dump/Ascii.html#new%28file%3AString%7CNil%3Dnil%2Cuid%3AString%7CNil%3Dnil%2Cuser%3AString%7CNil%3Dnil%2Cgid%3AString%7CNil%3Dnil%2Cgroup%3AString%7CNil%3Dnil%2Cmode%3AInt32%7CNil%3Dnil%29-class-method">Dump::Ascii.new</a></code></p>
 <p>Example:</p>
 <pre><code class="language-crystal">dump <span class="o">=</span> <span class="t">Gdbmish</span><span class="t">::</span><span class="t">Dump</span>.ascii <span class="k">do</span> <span class="o">|</span>appender<span class="o">|</span>
   <span class="t">MyDataSource</span>.each <span class="k">do</span> <span class="o">|</span>key, value<span class="o">|</span>
@@ -346,7 +346,7 @@ Returns a standard ASCII format as a new <code>String</code>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/fnordfish/gdbmish/blob/9ee6495bcd3bae8d8c80386d8ec963f25384be2c/src/gdbmish/dump.cr#L178" target="_blank">View source</a>]
+          [<a href="https://github.com/fnordfish/gdbmish/blob/ad4f706068201171aaaab286700a415afdecef7b/src/gdbmish/dump.cr#L178" target="_blank">View source</a>]
         
       </div>
     </div>
