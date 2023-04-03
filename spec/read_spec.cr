@@ -61,15 +61,15 @@ end
 describe Gdbmish::Read::AsciiMetaData do
   describe ".parse" do
     it "Reads meta data_hash, skiping count" do
-      metae_data = Gdbmish::Read::AsciiMetaData.parse(dumped_file)
-      metae_data.count.should be_nil
-      metae_data.file.should eq "spec/fixtures/test.db"
-      metae_data.gid.should eq "20"
-      metae_data.group.should eq "staff"
-      metae_data.mode.should eq 0o644
-      metae_data.uid.should eq "501"
-      metae_data.user.should eq "robertschulze"
-      metae_data.version.should eq "1.1"
+      meta_data = Gdbmish::Read::AsciiMetaData.parse(dumped_file)
+      meta_data.count.should be_nil
+      meta_data.file.should eq "spec/fixtures/test.db"
+      meta_data.gid.should eq "20"
+      meta_data.group.should eq "staff"
+      meta_data.mode.should eq 0o644
+      meta_data.uid.should eq "501"
+      meta_data.user.should eq "robertschulze"
+      meta_data.version.should eq "1.1"
     end
   end
 
