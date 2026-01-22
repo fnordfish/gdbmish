@@ -74,7 +74,7 @@ module Gdbmish
         @user : String? = nil,
         @gid : String? = nil,
         @group : String? = nil,
-        @mode : Int32? = nil
+        @mode : Int32? = nil,
       )
       end
 
