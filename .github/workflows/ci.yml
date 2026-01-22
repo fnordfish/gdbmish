@@ -17,7 +17,9 @@ jobs:
         uses: actions/checkout@v3
       - name: Install libyaml
         if: "matrix.crystal == '1.0' && matrix.os == 'macos-latest'"
-        run: brew install libyaml
+        run: |
+          sudo mkdir -p /opt/crystal/embedded/lib
+          sudo ln -sf $(brew --prefix libyaml)/lib/libyaml-0.2.dylib /opt/crystal/embedded/lib/libyaml-0.2.dylib
       - name: Install Crystal
         uses: crystal-lang/install-crystal@v1
         with:
