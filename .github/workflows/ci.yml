@@ -15,11 +15,17 @@ jobs:
     steps:
       - name: Download source
         uses: actions/checkout@v3
-      - name: Install libyaml
+      - name: Setup x86 libyaml for Crystal 1.0
         if: "matrix.crystal == '1.0' && matrix.os == 'macos-latest'"
         run: |
+          # Install x86_64 Homebrew if not present
+          if [ ! -f /usr/local/bin/brew ]; then
+            arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          fi
+          # Install libyaml using x86_64 Homebrew
+          arch -x86_64 /usr/local/bin/brew install libyaml
           sudo mkdir -p /opt/crystal/embedded/lib
-          sudo ln -sf $(brew --prefix libyaml)/lib/libyaml-0.2.dylib /opt/crystal/embedded/lib/libyaml-0.2.dylib
+          sudo ln -sf $(/usr/local/bin/brew --prefix libyaml)/lib/libyaml-0.2.dylib /opt/crystal/embedded/lib/libyaml-0.2.dylib
       - name: Install Crystal
         uses: crystal-lang/install-crystal@v1
         with:
